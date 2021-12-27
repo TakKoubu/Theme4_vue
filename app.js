@@ -1,25 +1,25 @@
 const app = Vue.createApp({
-  data(){
+  data() {
     return {
-      text: '',
-      text2: '',
-      boxC: false
+      className: '',
+      isVisible: true,
+      bgColor: ''
     }
   },
   computed: {
-    inputdata: function() {
-      return this.text;
-    },
-    input2data: function() {
-      return this.text2;
-    },
+    validClassName() {
+      return {
+        user1: this.className === 'user1', 
+        user2: this.className === 'user2',
+        visible: this.isVisible,
+        hidden: !this.isVisible
+      };
+    }
   },
   methods: {
-    boxSelected(box){
-      if (box === 'C'){
-        this.boxC = !this.boxC;
-      }
-    } 
+    toggleParagraph() {
+      this.isVisible = !this.isVisible;
+    },
   }
 });
 
