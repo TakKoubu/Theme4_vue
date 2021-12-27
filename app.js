@@ -1,22 +1,23 @@
 const app = Vue.createApp({
   data(){
     return {
-      text: ''
+      text: '',
+      text2: '',
+      boxC: false
     }
   },
   computed: {
     inputdata: function() {
-      return this.text
+      return this.text;
+    },
+    input2data: function() {
+      return this.text2;
     },
   },
   methods: {
     boxSelected(box){
-      if (box === 'A') {
-        this.boxASelected = !this.boxASelected;
-      } else if (box === 'B'){
-        this.boxBSelected = !this.boxBSelected;
-      } else if (box === 'C'){
-        this.boxCSelected = !this.boxCSelected;
+      if (box === 'C'){
+        this.boxC = !this.boxC;
       }
     } 
   }

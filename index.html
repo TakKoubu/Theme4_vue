@@ -24,13 +24,13 @@
       <p :class="[inputdata]">
         Style me!
       </p>
-      <button>Toggle Paragraph</button>
+      <button @click="boxSelected('C')" :class="{hidden: boxC}">Toggle Paragraph</button>
       <!-- 2) Use the "visible" and "hidden" classes to show/ hide the above paragraph -->
       <!-- Clicking the button should toggle between the two options -->
 
       <!-- 3) Add dynamic inline styling to the below paragraph and let the user enter a background-color -->
-      <input type="text" />
-      <p>Style me inline!</p>
+      <input type="text" v-model="text2"/>
+      <p :style="{ 'background-color': [input2data]}">Style me inline!</p>
     </section>
   </body>
 </html>
